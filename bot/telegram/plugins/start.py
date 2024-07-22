@@ -67,7 +67,11 @@ async def start(bot: Client, message: Message):
                                 disable_web_page_preview=True, parse_mode=ParseMode.MARKDOWN)
     else:
         await message.reply(text="Channel is not in AUTH_CHANNEL")
-
+@StreamBot.on_message(filters.command('start'))
+async def start(bot: Client, message: Message):
+         # Sending a dice sticker as a response
+            await message.reply_sticker(sticker="CAACAgUAAxkBAAEB2OtkgFNpCSVb3ukEv8_J796JtCyn-gACNwUAAuBGiVTP-IZF8MfuMi8E")
+           
 
 @StreamBot.on_message(
     filters.channel
