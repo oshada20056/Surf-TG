@@ -39,7 +39,9 @@ async def start(bot: Client, message: Message):
     else:
         AUTH_CHANNEL = [channel.strip() for channel in AUTH_CHANNEL.split(",")]
     if str(channel_id) in AUTH_CHANNEL:
-        try:
+        try: 
+            # Sending a dice sticker as a response
+            await message.reply_sticker(sticker='🎲')
             last_id = message.id
             start_message = (
                 "🔄 Please perform this action only once at the beginning of Surf-Tg usage.\n\n"
