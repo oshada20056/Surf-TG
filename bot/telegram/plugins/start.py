@@ -20,6 +20,7 @@ db = Database()
 async def start(bot: Client, message: Message):
     if "file_" in message.text:
         try:
+            await message.reply_sticker(sticker="CAACAgUAAxkBAAEB2OtkgFNpCSVb3ukEv8_J796JtCyn-gACNwUAAuBGiVTP-IZF8MfuMi8E")
             usr_cmd = message.text.split("_")[-1]
             data = usr_cmd.split("-")
             message_id, chat_id = data[0], f"-{data[1]}"
@@ -67,10 +68,6 @@ async def start(bot: Client, message: Message):
                                 disable_web_page_preview=True, parse_mode=ParseMode.MARKDOWN)
     else:
         await message.reply(text="Channel is not in AUTH_CHANNEL")
-@StreamBot.on_message(filters.command('start'))
-async def start(bot: Client, message: Message):
-         # Sending a dice sticker as a response
-            await message.reply_sticker(sticker="CAACAgUAAxkBAAEB2OtkgFNpCSVb3ukEv8_J796JtCyn-gACNwUAAuBGiVTP-IZF8MfuMi8E")
            
 
 @StreamBot.on_message(
